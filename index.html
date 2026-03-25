@@ -5,51 +5,114 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SwissCam Security</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body{
+
+*{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
 background:#0b0f14;
 color:white;
 }
 
-header{
-padding:20px;
-text-align:center;
-background:#05080c;
-font-size:24px;
-font-weight:bold;
+/* NAVBAR */
+
+nav{
+position:sticky;
+top:0;
+background:rgba(5,8,12,0.8);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+font-weight:700;
+font-size:20px;
 letter-spacing:1px;
 }
 
+.menu{
+display:flex;
+gap:30px;
+}
+
+.menu a{
+text-decoration:none;
+color:#ccc;
+transition:0.3s;
+font-weight:500;
+}
+
+.menu a:hover{
+color:#00e676;
+}
+
+.call-nav{
+background:#00c853;
+padding:10px 20px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+/* HERO */
+
 .hero{
 text-align:center;
-padding:80px 20px;
+padding:120px 20px;
+background:radial-gradient(circle at top, rgba(0,200,83,0.15), transparent);
 }
 
 .hero h1{
-font-size:40px;
-margin-bottom:10px;
+font-size:48px;
+margin-bottom:15px;
 }
 
 .hero p{
-color:#ccc;
+color:#aaa;
+font-size:18px;
 }
 
 .call-btn{
 display:inline-block;
-margin-top:20px;
-padding:15px 30px;
+margin-top:30px;
+padding:16px 35px;
 background:#00c853;
 color:white;
 text-decoration:none;
-border-radius:8px;
-font-weight:bold;
+border-radius:10px;
+font-weight:600;
+transition:0.3s;
+box-shadow:0 0 20px rgba(0,200,83,0.4);
 }
 
+.call-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 30px rgba(0,200,83,0.6);
+}
+
+/* PACKAGES */
+
 .packages{
-padding:60px 20px;
+padding:80px 20px;
 text-align:center;
+}
+
+.packages h2{
+font-size:32px;
+margin-bottom:50px;
 }
 
 .package-container{
@@ -60,43 +123,45 @@ flex-wrap:wrap;
 }
 
 .package{
-background:#111821;
-padding:30px;
-border-radius:15px;
+background:linear-gradient(145deg,#0f1620,#0b1118);
+padding:35px;
+border-radius:20px;
 width:280px;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
 transition:0.3s;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .package:hover{
-transform:translateY(-10px);
+transform:translateY(-12px);
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
 }
 
 .package h3{
 font-size:24px;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 .package ul{
 list-style:none;
-padding:0;
 text-align:left;
 }
 
 .package li{
-margin:10px 0;
+margin:12px 0;
+color:#ccc;
 }
 
 .package button{
-margin-top:20px;
-padding:12px 25px;
+margin-top:25px;
+padding:14px;
 border:none;
 background:#00c853;
 color:white;
-font-weight:bold;
-border-radius:8px;
+font-weight:600;
+border-radius:10px;
 cursor:pointer;
 width:100%;
+transition:0.3s;
 }
 
 .package button:hover{
@@ -106,23 +171,53 @@ background:#00e676;
 .featured{
 border:2px solid #00c853;
 transform:scale(1.05);
+box-shadow:0 0 30px rgba(0,200,83,0.3);
 }
+
+/* FOOTER */
 
 footer{
 text-align:center;
-padding:30px;
+padding:40px;
 background:#05080c;
-margin-top:40px;
+margin-top:60px;
+color:#888;
 }
-</style>
 
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu{
+display:none;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+nav{
+padding:15px 20px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-SwissCam Security
-</header>
+<nav>
+<div class="logo">SwissCam</div>
+
+<div class="menu">
+<a href="#">Home</a>
+<a href="#">Pakete</a>
+<a href="#">Kontakt</a>
+</div>
+
+<a href="tel:0762274657" class="call-nav">Anrufen</a>
+</nav>
 
 <section class="hero">
 <h1>Professionelle Videoüberwachung</h1>
@@ -143,7 +238,7 @@ SwissCam Security
 <li>✔ Mobile App Zugriff</li>
 <li>✔ Basis Simulation</li>
 </ul>
-<button>Buy Now</button>
+<button>Anfragen</button>
 </div>
 
 <div class="package featured">
@@ -155,7 +250,7 @@ SwissCam Security
 <li>✔ Nachtüberwachung</li>
 <li>✔ Remote Zugriff</li>
 </ul>
-<button>Buy Now</button>
+<button>Anfragen</button>
 </div>
 
 <div class="package">
@@ -167,7 +262,7 @@ SwissCam Security
 <li>✔ KI Bewegungserkennung</li>
 <li>✔ Prioritäts Support</li>
 </ul>
-<button>Buy Now</button>
+<button>Anfragen</button>
 </div>
 
 </div>
